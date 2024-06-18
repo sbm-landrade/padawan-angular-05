@@ -3,7 +3,6 @@ import { PensamentoService } from './../pensamento.service';
 import { Pensamento } from './../pensamento';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { minusculoValidator } from './minusculoValidators';
 
 
 @Component({
