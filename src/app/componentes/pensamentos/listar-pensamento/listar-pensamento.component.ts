@@ -20,5 +20,15 @@ export class ListarPensamentoComponent implements OnInit {
       this.listaPensamentos = listaPensamentos
     })
   }
+
+  carregarMaisPensamentos() {
+    this.service.listar(++this.paginaAtual)
+      .subscribe(listaPensamentos => {
+        this.listaPensamentos.push(...listaPensamentos);
+        if(!listaPensamentos.length) {
+          this.haMaisPensamentos = false
+        }
+      })
+  }
 }
 
