@@ -50,6 +50,15 @@ export class ListarPensamentoComponent implements OnInit {
         this.listaPensamentos = listaPensamentos;
       });
   }
+
+  recarregarComponente() {
+    this.favoritos = false;
+    this.paginaAtual = 1;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload'
+    this.router.navigate([this.router.url])
+  }
+
   listarFavoritos() {
     this.favoritos = true;
     this.haMaisPensamentos = true;
